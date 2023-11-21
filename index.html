@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>APLIKASI LAUNDRY RA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:wght@100;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Laundry RA</h1>
+    <h1>Selamat Datang Di Aplikasi Laundry RA</h1>
+    <fieldset id="hero">
+      <legend>Input Form</legend>
+      <label for="type">Pilih Jenis yang mau Laundry:</label>
+      <select id="type" name="type">
+        <option value="pakaian">Pakaian</option>
+        <option value="bedcover">Bedcover</option>
+        <option value="karpet">Karpet</option>
+      </select>
+      <label for="type">Masukan Berat (Kg)</label>
+      <input type="number" id="berat" name="berat" />
+      <button type="button" onclick="addOrder()">Tambah Pesanan</button>
+    </fieldset>
+    <h2>Daftar Pesanan</h2>
+    <table id="listorderan">
+      <tr>
+        <th>Jenis</th>
+        <th>Berat (Kg)</th>
+        <th>Total Harga</th>
+        <th>Aksi</th>
+      </tr>
+    </table>
+    <br />
+    <div id="totalpembayaran"></div>
+    <br />
+    <form
+      id="paymentForm"
+      onsubmit="event.preventDefault(); calculatekembalian()"
+    >
+      <label for="amountPaid">Jumlah Bayar:</label>
+      <br />
+      <input type="number" id="amountPaid" name="amountPaid" />
+      <button type="submit">Hitung Kembalian</button>
+    </form>
+    <br />
+    <div id="kembalian"></div>
+    <script src="fungsi.js"></script>
+    <h4>Terima Kasih Sudah Melaundry di RA</h4>
+  </body>
+</html>
